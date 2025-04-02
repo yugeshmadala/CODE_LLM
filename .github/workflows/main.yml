@@ -18,13 +18,20 @@ jobs:
 
       - name: Set Up Git
         run: |
-          git config --global user.email "yugeshyogi972@gmail.com"
-          git config --global user.name "yugeshmadala"
+          git config --global user.email "yugeshyogi972@gmail.com"  # Use your GitHub email
+          git config --global user.name "yugeshmadala"  # Use your GitHub username
+
+      - name: Pull Latest Changes from Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git remote set-url origin https://Yugesh143:$HF_TOKEN@huggingface.co/spaces/Yugesh143/Code_llm 
+          git pull --rebase origin main  # Pull latest changes before pushing
 
       - name: Push Code to Hugging Face Spaces
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git remote set-url origin https://Yugesh143:$HF_TOKEN@huggingface.co/spaces/Yugesh143/Code_llm
-          git push origin main --force-with-lease
+          git push origin main
+
 
