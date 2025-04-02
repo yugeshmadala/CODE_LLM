@@ -1,2 +1,11 @@
 # CODE_LLM
-CodeGuru is an AI-powered code assistant that generates, explains, and debugs code in multiple programming languages using Groq models and LangChain
+title: Code Llm
+emoji: 🏢
+colorFrom: red
+colorTo: pink
+sdk: gradio
+sdk_version: 5.23.3
+app_file: app.py
+pinned: false
+license: apache-2.0
+short_description: Coding LLM
